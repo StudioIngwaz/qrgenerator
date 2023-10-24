@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+    <img class="logo" src="../media/4.png" alt="logo">
+    <h1>QR Code Generator</h1>
+    <form method="post" action="{% url 'generate_qr' %}" >
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Digite a URL">
+        <button type="submit">Gerar QR Code</button>
+    </form>
+</body>
+</html>
